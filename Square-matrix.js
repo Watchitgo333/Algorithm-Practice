@@ -1,5 +1,6 @@
 //Given a square matrix, calculate the absolute difference between sus of ts diagonals
 //For a good step by step solution see this link https://www.youtube.com/watch?v=5l8Hrr-h-iQ&t=348s
+//https://www.hackerrank.com/challenges/diagonal-difference/problem?isFullScreen=true
 
 function diagonalDifference(arr) {
     var first = 0;
