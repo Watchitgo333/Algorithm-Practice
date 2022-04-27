@@ -26,6 +26,8 @@ def birthdayCakeCandles(candles):
         elif candles[x] == max:
             count +=1
     return count
+    or comment out the above and
+    return candles.count(max(candles))
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
