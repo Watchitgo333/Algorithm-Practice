@@ -23,7 +23,15 @@ def gradingStudents(grades):
             rounded_grades.append(5 * round(grades[x]/5))
         else: rounded_grades.append(grades[x])       
     return rounded_grades
-
+# or def gradingStudents(grades):
+#     rounded_grades = []
+#     for x in grades:
+#         if x >=38:
+#             mod5 = x % 5
+#             if mod5 >= 3:
+#                 x += (5-mod5)
+#         rounded_grades.append(x)
+#     return rounded_grades
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
