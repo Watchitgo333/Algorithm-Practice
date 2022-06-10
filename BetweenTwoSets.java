@@ -1,5 +1,6 @@
 
 //https://www.hackerrank.com/challenges/between-two-sets/problem?isFullScreen=true
+//Check out Study Algorithms on youtube and github! Super helpful!! https://github.com/nikoo28/java-solutions
 import java.io.*;
 import java.math.*;
 import java.security.*;
@@ -23,13 +24,43 @@ class Result {
      *  2. INTEGER_ARRAY b
      */
 
-    public static int getTotalX(List<Integer> a, List<Integer> b) {
-        int count = 0;
-        System.out.println();
-        for(int x = 0; x < b.size(); x ++) {
-            }
-        return count;
+    public static int getGCD(int n1, int n2) {
+        if (n2==0) {
+            return n1;
+        }
+        return getGCD(n2,n1 % n2);
+    }
+    
+    public static int getLCM(int n1, int n2) {
+        if (n1==0 || n2==0) {
+            return 0;
+        } else {
+            int gcd = getGCD(n1, n2);
+            return Math.abs(n1 * n2) / gcd;
+        }
+    }
 
+    public static int getTotalX(List<Integer> a, List<Integer> b) {
+        int result = 0;
+        
+        int lcm = a.get(0);
+        for(Integer integer : a) {
+            lcm = getLCM(lcm, integer);
+        }
+        
+        int gcd = b.get(0);
+        for(Integer integer : b) {
+            gcd = getGCD(gcd, integer);
+        }
+        
+        int multiple = 0;
+        while (multiple <= gcd) {
+            multiple += lcm;
+            
+            if (gcd % multiple == 0)
+            result ++;
+        }
+        return result;
     }
 
 }
